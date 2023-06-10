@@ -145,7 +145,53 @@ The authors have employes noise suppression in detail pathway to avoid the distu
 
 ## A novel biologically-inspired method for underwater image enhancement
 
+Yan et al. [[2]](#2) proposed a novel method that takes inspiration from the color constatncy mechanism in photoreceptors horizontal cells to correct color distortion present in underwater images. Additionally,Horizontal cells modulation provides a global color correction with gaincontrol, in which ligh twavelength dependent absorption is taken into account. Then to remove the hazing effects and noise from the image they have  proposed a two pathway dehazing method. This method is inspired from the framework proposed by Yang et al. [[5]](#5). Additionally they have proposed innovative biological normalization model to adjust the dynamic range of luminance by integrating the bright and dark regions. The proposed framework is illustrated in Figure 12.
 
+<center>
+<figure>
+  <img src="images/underwater_framework.png" alt="my alt text"/>
+    <center>
+      <figcaption>Figure 12: Proposed framework, HR: Red sensitive Horizontal cells, HG: Green sensitive Horizontal cells, HB: Blue sensitive Horizontal cells  image[2].</figcaption>
+  </center>
+</figure>
+</center>
+
+### Color constancy method
+
+Underwater images often are color biased due to light attenuation or complex sources. Hence it's very crucial to handle the color distortion before applying other image enhancement techniques. The cone cells can be divided into long, medium and short category depending upon the most sensitive spectral wavelength. The proposed model applies a 2D gaussian filter to simulate the receptive filed of each type of cones. This results in three different channels for red, green and blue colors. After the cone cells absorb light, Horizontal Cells (HCs) help to integrate and adjust signal from cones. The authors have applied gamma correction on each of the channel forsimulating Horizontal cells. The gamma value has to be adaptive to incorporate different types of color distortions. The gamma value is calculated as a ratio of mean value of input image with mean value of well preserved channel. This is depicted in Figure 13. 
+
+<center>
+<figure>
+  <img src="images/gamma_correction_eqn.png" alt="my alt text"/>
+    <center>
+      <figcaption>Figure 13: adaptive gamma simulating horizontal cells image[2].</figcaption>
+  </center>
+</figure>
+</center>
+
+Here $\mu(P_{c})$ denotes the mean value of $P_{c}$ and $\theta = argmax (\mu(P_{c}))$. The comparisong of the proposed color constancy method with other methods is depicted in Figure 14. 
+
+<center>
+<figure>
+  <img src="images/color_constancy_comparison.png" alt="my alt text"/>
+    <center>
+      <figcaption>Figure 14: qualitative comparison of proposed color constancy method[2].</figcaption>
+  </center>
+</figure>
+</center>
+
+### Results
+
+<center>
+<figure>
+  <img src="images/qualitative_comparison_with_GAN_based_methods.png" alt="my alt text"/>
+    <center>
+      <figcaption>Figure 14: qualitative comparison of proposed approach [2].</figcaption>
+  </center>
+</figure>
+</center>
+
+## Ethical questions
 
 ## References
 <a id="1">[1]</a> 
