@@ -5,6 +5,10 @@
 
 Following is a submission for the final project of [Natural and Artificial Vision](https://www.mccormick.northwestern.edu/computer-science/academics/courses/descriptions/396-19.html) course taught by [Dr. Emma Alexander](https://www.alexander.vision/emma) at Northwestern University during Spring 2023.
 
+Submitted by:
+
+[Surya Pratap Singh Parmar](https://www.mccormick.northwestern.edu/artificial-intelligence/people/students/2022-2023/surya-parmar.html)
+
 <!-- ## Table of Contents
 1. [Why is underwater imaging challenging?](#why-is-underwater-imaging-challenging?)
 2. [Example2](#example2)
@@ -180,6 +184,11 @@ Here $\mu(P_{c})$ denotes the mean value of $P_{c}$ and $\theta = argmax (\mu(P_
 </figure>
 </center>
 
+### Two pathway dehazing method
+
+The framework is inspired from Yang et al. [[5]](#5), but they are using local maximum and local minimum filters for estimating dark and bright maps during luminance adaptation step. Additionally for improving the dynamic range of image they have proposed novel biological normalization model  to enhance luminance by reducing some amounts of dark maps from input luminance map. Furthermore, underwater images suffer from noise due to medium attenuations and scattering of light. The authors have employed the noise suppresion in the detail pathway. 
+.
+
 ### Results
 
 <center>
@@ -191,7 +200,21 @@ Here $\mu(P_{c})$ denotes the mean value of $P_{c}$ and $\theta = argmax (\mu(P_
 </figure>
 </center>
 
+
+
 ## Ethical questions
+
+Underwater image enhancement offer promising solution to accelerate ocean research. However, We need to be very careful that the resources involved in the development of these techniques are ethically consistent. We should think about the dataset collected for evaluating these techniques offers minimal disturbance to the marine life. Underwater imagery often requires human divers to capture image. There should be an informed consent from them on how the collected dataset is going to be used. Additionally, they should be credited well whenever the dataset is used by other researchers. Further, there should be an analysis of unintended bias in the trained model. This is crucial because if the techniques does not work well on some sepcific images, this may results in those images getting ignored from the research.
+
+Bio-inspired vision systems often builds upon some of the mechanisms that were found in living organisms. So we should make sure that the research work involved in getting that information follows ethical guidelines. For instance were the experiments carried out approved? What was the impact of those experimentson the species in consideration? Additionally, the researchers should also think deeply about the societal impacts of the research work. As bio-inspired underwater image enhancement techniques are developed and applied, it is important to maintain transparency in the algorithms and methodologies used. Openness about the limitations, potential biases, and uncertainties associated with these techniques is vital.
+
+## Conclusion and future work
+
+Improving quality of underwater images is a challenging task and it opens plenty of opporunities to computer vision applications. As underwater image has it's own artifacts, hence general image enhancement techniques might not work very well. There's a need to develop solutions that are targeted specifically towards improving underwater images. 
+
+For future work, I'm planning to improve results of deep learning based underwater image enhancement methods [[8]](#8), [[9]](#9) using bio inspired vision systems. I feel bio inspired vision techniques combined with deep learning based approaches is a promising approach and should be explored further. 
+
+
 
 ## References
 <a id="1">[1]</a> 
@@ -221,3 +244,28 @@ Comput. Vis., vol. 67, no. 1, pp. 111–136, 2006
 X. Pu, K. Yang, and Y. Li, “A retinal adaptation model for HDR
 image compression,” in Proc. CCF Chin. Conf. Comput. Vis. Singapore:
 Springer, 2017, pp. 37–47
+
+<a id="8">[8]</a> 
+Sharma, Prasen, Ira Bisht, and Arijit Sur. "Wavelength-based attributed deep neural network for underwater image restoration." ACM Transactions on Multimedia Computing, Communications and Applications 19.1 (2023): 1-23.
+
+<a id="9">[9]</a> 
+Chen, Xuelei, et al. "Underwater image enhancement based on deep learning and image formation model." arXiv preprint arXiv:2101.00991 (2021).
+
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MathJax example</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<p>
+  When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+  \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+</p>
+</body>
+</html>
